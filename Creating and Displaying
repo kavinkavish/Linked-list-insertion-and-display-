@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+
+int a;
+struct node *next;
+
+}*head,*temp,*temp1;
+
+
+void inserting(){
+
+int num;
+temp=(struct node*)malloc(sizeof(struct node));
+temp1=(struct node*)malloc(sizeof(struct node));
+
+printf("Enter a number");
+scanf("%d",&num);
+
+temp1=head;
+if(head==NULL){
+    temp->a=num;
+    temp->next=NULL;
+    head=temp;
+}
+
+else{
+    while(temp1->next!=NULL){
+        temp1=temp1->next;
+    }
+    temp->a=num;
+    temp->next=NULL;
+    temp1->next=temp;
+}
+
+
+}
+
+void display(){
+temp=head;
+while(temp!=NULL){
+    printf("\n%d",temp->a);
+    temp=temp->next;
+    }
+}
+
+int main()
+{
+    int i;
+    for(i=0; i<5;i++){
+    inserting();
+    }
+    display();
+
+    return 0;
+}
